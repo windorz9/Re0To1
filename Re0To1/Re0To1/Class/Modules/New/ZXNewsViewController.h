@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ZXNewsViewController.h
 //  Re0To1
 //
 //  Created by windorz on 2019/6/4.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ZXNewsViewController : UIViewController
 
 
 @end

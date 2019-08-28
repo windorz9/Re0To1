@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "ZXNewsViewController.h"
+#import "ZXVideoViewController.h"
+#import "ZXReCommendViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,36 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.view.backgroundColor = [UIColor whiteColor];
+    
+    ZXNewsViewController *newsViewController = [[ZXNewsViewController alloc] init];
+    
+    ZXVideoViewController *videoController = [[ZXVideoViewController alloc] init];
+    
+    ZXReCommendViewController *recommendController = [[ZXReCommendViewController alloc] init];
+    
+    UIViewController *mineViewController = [[UIViewController alloc] init];
+    mineViewController.tabBarItem.title = @"我的";
+    mineViewController.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/home@2x.png"];
+    mineViewController.tabBarItem.selectedImage = [UIImage imageNamed:@"icon/home_selected@2x.png"];
+    mineViewController.view.backgroundColor = [UIColor orangeColor];
+
+    tabBarController.viewControllers = @[newsViewController, videoController, recommendController, mineViewController];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabBarController];
+    navigationController.view.backgroundColor = [UIColor whiteColor];
+//    navigationController.navigationBar.translucent = NO;
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = navigationController;
+//    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+
+
     return YES;
 }
 
