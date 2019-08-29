@@ -57,6 +57,46 @@
 //                                   NSLog(@"");
 //                               }];
     
+    // 测试文件写入和查询
+    [self getSandBoxPath];
+    
+}
+
+- (void)getSandBoxPath {
+    
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachePath = [pathArray firstObject];
+    
+    // 使用 NSFileManager 创建文件和文件夹
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    // 创建文件夹
+    NSString *dataDirectoryPath = [cachePath stringByAppendingPathComponent:@"ZXData"];
+    NSError *creatDirectoryError;
+    [fileManager createDirectoryAtPath:dataDirectoryPath withIntermediateDirectories:YES attributes:nil error:&creatDirectoryError];
+    
+    // 创建文件 同时写入文件
+    NSString *listDataPath = [dataDirectoryPath stringByAppendingPathComponent:@"list"];
+    NSData *listData = [@"abc" dataUsingEncoding:NSUTF8StringEncoding];
+    [fileManager createFileAtPath:listDataPath contents:listData attributes:nil];
+    
+    // 判断文件是否存在
+    BOOL fileExist = [fileManager fileExistsAtPath:listDataPath];
+    
+//    if (fileExist) {
+//        [fileManager removeItemAtPath:fileExist error:nil];
+//    }
+    
+    // 使用 NSFileHandle 进行文件的修改
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:listDataPath];
+    [fileHandle seekToEndOfFile];
+    
+    [fileHandle writeData:[@"def" dataUsingEncoding:NSUTF8StringEncoding]];
+    [fileHandle synchronizeFile];
+    [fileHandle closeFile];
+    
+    NSLog(@"");
+    
+    
 }
 
 @end
