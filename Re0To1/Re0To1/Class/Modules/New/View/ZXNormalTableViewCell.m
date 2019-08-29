@@ -7,6 +7,7 @@
 //
 
 #import "ZXNormalTableViewCell.h"
+#import "ZXListItem.h"
 
 @interface ZXNormalTableViewCell ()
 
@@ -35,45 +36,42 @@
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         // 创建对应的 label
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 250, 50)];
-//        self.titleLabel.backgroundColor = [UIColor redColor];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 220, 50)];
+        self.titleLabel.numberOfLines = 2;
+        self.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         self.titleLabel.font = [UIFont systemFontOfSize:16];
         self.titleLabel.textColor = [UIColor blackColor];
         [self.contentView addSubview:self.titleLabel];
         
-        self.sourceLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 80, 50, 20)];
-//        self.sourceLabel.backgroundColor = [UIColor redColor];
+        self.sourceLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 70, 50, 20)];
         self.sourceLabel.font = [UIFont systemFontOfSize:12];;
         self.sourceLabel.textColor = [UIColor blackColor];
         [self.contentView addSubview:self.sourceLabel];
         
-        self.commentLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 80, 50, 20)];
-//        self.commentLabel.backgroundColor = [UIColor redColor];
+        self.commentLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 70, 50, 20)];
         self.commentLabel.font = [UIFont systemFontOfSize:12];
         self.commentLabel.textColor = [UIColor blackColor];
         [self.contentView addSubview:self.commentLabel];
         
-        self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 80, 50, 20)];
-//        self.timeLabel.backgroundColor = [UIColor redColor];
+        self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 70, 50, 20)];
         self.timeLabel.font = [UIFont systemFontOfSize:12];
         self.timeLabel.textColor = [UIColor blackColor];
         [self.contentView addSubview:self.timeLabel];
         
-        self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(280, 15, 70, 70)];
-        self.rightImageView.backgroundColor = [UIColor redColor];
+        self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(250, 15, 100, 70)];
         self.rightImageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.contentView addSubview:self.rightImageView];
         
-        self.deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(240, 80, 30, 20)];
-        [self.deleteBtn setTitle:@"X" forState:UIControlStateNormal];
-        [self.deleteBtn setTitle:@"V" forState:UIControlStateHighlighted];
-        [self.deleteBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        self.deleteBtn.layer.cornerRadius = 10;
-        self.deleteBtn.layer.masksToBounds = YES;
-        self.deleteBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        self.deleteBtn.layer.borderWidth = 2.0;
-        [self.deleteBtn addTarget:self action:@selector(deleteBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:self.deleteBtn];
+//        self.deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(240, 70, 30, 20)];
+//        [self.deleteBtn setTitle:@"X" forState:UIControlStateNormal];
+//        [self.deleteBtn setTitle:@"V" forState:UIControlStateHighlighted];
+//        [self.deleteBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        self.deleteBtn.layer.cornerRadius = 10;
+//        self.deleteBtn.layer.masksToBounds = YES;
+//        self.deleteBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
+//        self.deleteBtn.layer.borderWidth = 2.0;
+//        [self.deleteBtn addTarget:self action:@selector(deleteBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+//        [self.contentView addSubview:self.deleteBtn];
         
         
     }
@@ -84,22 +82,24 @@
 
 
 // 设置内容和修改文本位置
-- (void)layoutTableViewCell {
+- (void)layoutTableViewCellWithItem:(ZXListItem *)item {
     
-    self.titleLabel.text = @"皮皮虾,我们走";
+    self.titleLabel.text = item.title;
     
-    self.sourceLabel.text = @"github";
+    self.sourceLabel.text = item.authorName;
     [self.sourceLabel sizeToFit];
     
-    self.commentLabel.text = @"1888评论";
+    self.commentLabel.text = item.category;
     [self.commentLabel sizeToFit];
     self.commentLabel.frame = CGRectMake(self.sourceLabel.frame.origin.x + self.sourceLabel.frame.size.width + 15, self.commentLabel.frame.origin.y, self.commentLabel.frame.size.width, self.commentLabel.frame.size.height);
     
-    self.timeLabel.text = @"1小时前";
+    self.timeLabel.text = item.date;
     [self.timeLabel sizeToFit];
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15, self.timeLabel.frame.origin.y, self.timeLabel.bounds.size.width, self.timeLabel.bounds.size.height);
     
-    self.rightImageView.image = [UIImage imageNamed:@"icon.bundle/time.jpeg"];
+#warning 加载图片 待处理
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]]];
+    self.rightImageView.image = image;
     
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ZXListItem;
 
 @protocol ZXNormalTableViewCellDelegate <NSObject>
 
@@ -18,7 +19,7 @@
 
 @property (nonatomic, weak) id<ZXNormalTableViewCellDelegate> delegate;
 
-- (void)layoutTableViewCell;
+- (void)layoutTableViewCellWithItem:(ZXListItem *)item;
 
 @end
 

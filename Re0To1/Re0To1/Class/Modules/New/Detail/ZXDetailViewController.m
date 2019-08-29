@@ -14,19 +14,32 @@
 @property(nonatomic, strong) WKWebView *webView;
 /** 加载进度条 */
 @property(nonatomic, strong) UIProgressView *progressView;
+/** 文章字符串 */
+@property(nonatomic, copy) NSString *articleUrl;
 
 @end
 
 @implementation ZXDetailViewController
 
+- (instancetype)initWithUrlString:(NSString *)urlString {
+    
+    self = [super init];
+    if (self) {
+        self.articleUrl = urlString;
+    }
+    return self;
+    
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     // 创建 WKWebView 进行加载页面
     WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64)];
     webView.navigationDelegate = self;
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://time.geekbang.org"]];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:self.articleUrl]];
     [webView loadRequest:request];
     self.webView = webView;
     [self.view addSubview:webView];

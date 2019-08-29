@@ -10,12 +10,16 @@
 #import "ZXNormalTableViewCell.h"
 #import "ZXDetailViewController.h"
 #import "ZXDeleteCellView.h"
+#import "ZXListLoader.h"
+#import "ZXListItem.h"
 
 @interface ZXNewsViewController () <UITableViewDataSource, UITableViewDelegate, ZXNormalTableViewCellDelegate>
 /** TableView */
 @property(nonatomic, strong) UITableView *tableView;
 /** 数据源数组 */
-@property(nonatomic, strong) NSMutableArray *dataArray;
+@property(nonatomic, strong) NSArray *dataArray;
+/** 网络请求 */
+@property(nonatomic, strong) ZXListLoader *lisLoader;
 
 @end
 
@@ -25,10 +29,6 @@
     
     self = [super init];
     if (self) {
-        _dataArray = [NSMutableArray array];
-        for (int i = 0; i < 20; i++) {
-            [_dataArray addObject:@(i)];
-        }
         self.tabBarItem.title = @"新闻";
         self.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"icon/page_selected@2x.png"];
@@ -48,6 +48,17 @@
     tableView.delegate = self;
     [self.view addSubview:tableView];
     self.tableView = tableView;
+    
+    // 添加一个网络请求
+    ZXListLoader *listLoader = [[ZXListLoader alloc] init];
+    __weak typeof(self) wself = self;
+    [listLoader loadListDataWithFinishBlock:^(BOOL success, NSArray<ZXListItem *> *dataArray) {
+        __strong typeof(self) strongSelf = wself;
+        NSLog(@"");
+        strongSelf.dataArray = dataArray;
+        [strongSelf.tableView reloadData];
+    }];
+    self.lisLoader = listLoader;
 }
 
 #pragma mark UITableViewDataSource & UITableViewDelegate
@@ -63,7 +74,8 @@
         cell.delegate = self;
     }
 
-    [cell layoutTableViewCell];
+    ZXListItem *item = self.dataArray[indexPath.row];
+    [cell layoutTableViewCellWithItem:item];
     return cell;
 
 }
@@ -75,9 +87,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ZXDetailViewController *vc = [[ZXDetailViewController alloc] init];
-    vc.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
-    vc.view.backgroundColor = [UIColor whiteColor];
+    ZXListItem *item = self.dataArray[indexPath.row];
+    ZXDetailViewController *vc = [[ZXDetailViewController alloc] initWithUrlString:item.ariticleUrl];
     [self.navigationController pushViewController:vc animated:YES];
     
 }
@@ -86,18 +97,18 @@
 - (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteBtn:(UIButton *)deleteBtn {
     
     // 显示删除界面
-    ZXDeleteCellView *deleteView = [[ZXDeleteCellView alloc] initWithFrame:self.view.bounds];
-    // 获取按钮相对于 self.view 的坐标
-    CGRect rect = [tableViewCell convertRect:deleteBtn.frame toView:nil];
-    __weak typeof(self) wself = self;
-    [deleteView showDeleteViewFromPoint:rect.origin clickBlock:^{
-        NSLog(@"点击删除按钮");
-        __strong typeof(self) strongSelf = wself;
-        // 删除对应的数据源
-        NSIndexPath *indexPath = [strongSelf.tableView indexPathForCell:tableViewCell];
-        [strongSelf.dataArray removeObjectAtIndex:indexPath.row];
-        [strongSelf.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }];
+//    ZXDeleteCellView *deleteView = [[ZXDeleteCellView alloc] initWithFrame:self.view.bounds];
+//    // 获取按钮相对于 self.view 的坐标
+//    CGRect rect = [tableViewCell convertRect:deleteBtn.frame toView:nil];
+//    __weak typeof(self) wself = self;
+//    [deleteView showDeleteViewFromPoint:rect.origin clickBlock:^{
+//        NSLog(@"点击删除按钮");
+//        __strong typeof(self) strongSelf = wself;
+//        // 删除对应的数据源
+//        NSIndexPath *indexPath = [strongSelf.tableView indexPathForCell:tableViewCell];
+//        [strongSelf.dataArray removeObjectAtIndex:indexPath.row];
+//        [strongSelf.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//    }];
     
 }
 
