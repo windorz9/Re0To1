@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  列表模型
  */
-@interface ZXListItem : NSObject
+@interface ZXListItem : NSObject <NSSecureCoding>
 /** category */
 @property(nonatomic, copy) NSString *category;
 /** thumbnail_pic_s */

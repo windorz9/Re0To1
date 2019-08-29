@@ -91,6 +91,10 @@
     ZXDetailViewController *vc = [[ZXDetailViewController alloc] initWithUrlString:item.ariticleUrl];
     [self.navigationController pushViewController:vc animated:YES];
     
+    // 添加处理已读状态
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniquekey];
+    [tableView reloadData];
+    
 }
 
 #pragma mark ZXNormalTableViewCellDelegate

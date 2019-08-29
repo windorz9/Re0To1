@@ -8,6 +8,7 @@
 
 #import "ZXNormalTableViewCell.h"
 #import "ZXListItem.h"
+#import <UIImageView+WebCache.h>
 
 @interface ZXNormalTableViewCell ()
 
@@ -84,6 +85,12 @@
 // 设置内容和修改文本位置
 - (void)layoutTableViewCellWithItem:(ZXListItem *)item {
     
+    BOOL hasRead = [[NSUserDefaults standardUserDefaults] boolForKey:item.uniquekey];
+    if (hasRead) {
+        self.titleLabel.textColor = [UIColor lightGrayColor];
+    } else {
+        self.titleLabel.textColor = [UIColor blackColor];
+    }
     self.titleLabel.text = item.title;
     
     self.sourceLabel.text = item.authorName;
@@ -98,9 +105,31 @@
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15, self.timeLabel.frame.origin.y, self.timeLabel.bounds.size.width, self.timeLabel.bounds.size.height);
     
 #warning 加载图片 待处理
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]]];
-    self.rightImageView.image = image;
+    /**
+    NSThread *downloadThread = [[NSThread alloc] initWithBlock:^{
+     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]]];
+     self.rightImageView.image = image;
+    }];
+    downloadThread.name = @"downloadThread";
+    [downloadThread start];
+     */
     
+    /**
+    dispatch_queue_global_t downloadQueue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_main_t mainQueue = dispatch_get_main_queue();
+    dispatch_async(downloadQueue, ^{
+        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]]];
+        dispatch_async(mainQueue, ^{
+            self.rightImageView.image = image;
+        });
+    });
+     */
+    
+    // 使用 SDWebImage 来设置图片
+    [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:item.picUrl]
+                                  completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+                                      NSLog(@"加载完成");
+                                  }];
 }
 
 

@@ -7,4 +7,5 @@ target 'Re0To1' do
 
   # Pods for Re0To1
   pod 'AFNetworking'
+  pod 'SDWebImage'
 end
