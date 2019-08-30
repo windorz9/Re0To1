@@ -9,6 +9,7 @@
 #import "ZXNormalTableViewCell.h"
 #import "ZXListItem.h"
 #import <UIImageView+WebCache.h>
+#import "ZXScreen.h"
 
 @interface ZXNormalTableViewCell ()
 
@@ -37,29 +38,29 @@
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         // 创建对应的 label
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 220, 50)];
+        self.titleLabel = [[UILabel alloc] initWithFrame:UIRect(20, 15, 220, 50)];
         self.titleLabel.numberOfLines = 2;
         self.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         self.titleLabel.font = [UIFont systemFontOfSize:16];
         self.titleLabel.textColor = [UIColor blackColor];
         [self.contentView addSubview:self.titleLabel];
         
-        self.sourceLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 70, 50, 20)];
+        self.sourceLabel = [[UILabel alloc] initWithFrame:UIRect(20, 70, 50, 20)];
         self.sourceLabel.font = [UIFont systemFontOfSize:12];;
         self.sourceLabel.textColor = [UIColor blackColor];
         [self.contentView addSubview:self.sourceLabel];
         
-        self.commentLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 70, 50, 20)];
+        self.commentLabel = [[UILabel alloc] initWithFrame:UIRect(100, 70, 50, 20)];
         self.commentLabel.font = [UIFont systemFontOfSize:12];
         self.commentLabel.textColor = [UIColor blackColor];
         [self.contentView addSubview:self.commentLabel];
         
-        self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 70, 50, 20)];
+        self.timeLabel = [[UILabel alloc] initWithFrame:UIRect(150, 70, 50, 20)];
         self.timeLabel.font = [UIFont systemFontOfSize:12];
         self.timeLabel.textColor = [UIColor blackColor];
         [self.contentView addSubview:self.timeLabel];
         
-        self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(250, 15, 100, 70)];
+        self.rightImageView = [[UIImageView alloc] initWithFrame:UIRect(250, 15, 100, 70)];
         self.rightImageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.contentView addSubview:self.rightImageView];
         
@@ -98,11 +99,11 @@
     
     self.commentLabel.text = item.category;
     [self.commentLabel sizeToFit];
-    self.commentLabel.frame = CGRectMake(self.sourceLabel.frame.origin.x + self.sourceLabel.frame.size.width + 15, self.commentLabel.frame.origin.y, self.commentLabel.frame.size.width, self.commentLabel.frame.size.height);
+    self.commentLabel.frame = CGRectMake(self.sourceLabel.frame.origin.x + self.sourceLabel.frame.size.width + UI(15), self.commentLabel.frame.origin.y, self.commentLabel.frame.size.width, self.commentLabel.frame.size.height);
     
     self.timeLabel.text = item.date;
     [self.timeLabel sizeToFit];
-    self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15, self.timeLabel.frame.origin.y, self.timeLabel.bounds.size.width, self.timeLabel.bounds.size.height);
+    self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + UI(15), self.timeLabel.frame.origin.y, self.timeLabel.bounds.size.width, self.timeLabel.bounds.size.height);
     
 #warning 加载图片 待处理
     /**

@@ -8,6 +8,7 @@
 
 #import "ZXVideoViewController.h"
 #import "ZXVideoCoverCell.h"
+#import "ZXVideoPlayerToolBar.h"
 
 @interface ZXVideoViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -36,8 +37,11 @@ static NSString *const CollectionViewID = @"CollectionViewID";
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.minimumLineSpacing = 10;
     flowLayout.minimumInteritemSpacing = 10;
-    flowLayout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width * 9 / 16);
+    flowLayout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width * 9 / 16 + ZXVideoPlayerToolBarHeight);
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+    // iOS 11 新加入的属性, 会帮我们自己进行内容的偏移 避免导航栏挡住
+    // 为了适配老版本最好是设置为 never 手动设置位置.
+//    collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     [collectionView registerClass:[ZXVideoCoverCell class] forCellWithReuseIdentifier:CollectionViewID];
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -54,7 +58,6 @@ static NSString *const CollectionViewID = @"CollectionViewID";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     ZXVideoCoverCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CollectionViewID forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
     [cell layoutWithVideoCoverUrl:@"icon.bundle/videoCover@3x.png" videoUrl:@"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"];
     return cell;
 

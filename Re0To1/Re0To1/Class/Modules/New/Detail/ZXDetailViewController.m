@@ -8,6 +8,7 @@
 
 #import "ZXDetailViewController.h"
 #import <WebKit/WebKit.h>
+#import "ZXScreen.h"
 
 @interface ZXDetailViewController () <WKNavigationDelegate>
 /** WebView */
@@ -37,7 +38,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     // 创建 WKWebView 进行加载页面
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64)];
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, STATUSBARHEIGHT + 44, self.view.bounds.size.width, self.view.bounds.size.height - STATUSBARHEIGHT - 44)];
     webView.navigationDelegate = self;
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:self.articleUrl]];
     [webView loadRequest:request];
@@ -48,7 +49,7 @@
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     
     // 创建一个自定义的加载进度条
-    UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 2)];
+    UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, STATUSBARHEIGHT + 44, self.view.bounds.size.width, 2)];
     self.progressView = progressView;
     [self.view addSubview:progressView];
 }
