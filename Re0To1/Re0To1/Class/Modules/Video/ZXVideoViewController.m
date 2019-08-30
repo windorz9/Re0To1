@@ -7,6 +7,7 @@
 //
 
 #import "ZXVideoViewController.h"
+#import "ZXVideoCoverCell.h"
 
 @interface ZXVideoViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -35,9 +36,9 @@ static NSString *const CollectionViewID = @"CollectionViewID";
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.minimumLineSpacing = 10;
     flowLayout.minimumInteritemSpacing = 10;
-    flowLayout.itemSize = CGSizeMake((self.view.bounds.size.width - 10)/2, 300);
+    flowLayout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width * 9 / 16);
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
-    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CollectionViewID];
+    [collectionView registerClass:[ZXVideoCoverCell class] forCellWithReuseIdentifier:CollectionViewID];
     collectionView.delegate = self;
     collectionView.dataSource = self;
     [self.view addSubview:collectionView];
@@ -52,25 +53,26 @@ static NSString *const CollectionViewID = @"CollectionViewID";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CollectionViewID forIndexPath:indexPath];
+    ZXVideoCoverCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CollectionViewID forIndexPath:indexPath];
     cell.backgroundColor = [UIColor redColor];
+    [cell layoutWithVideoCoverUrl:@"icon.bundle/videoCover@3x.png" videoUrl:@"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"];
     return cell;
 
 }
 
 #pragma mark <##>UICollectionViewDelegateFlowLayout
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.item % 3 == 0) {
-        
-        return CGSizeMake(self.view.bounds.size.width, 100);
-    } else {
-        
-        return CGSizeMake((self.view.bounds.size.width - 10)/2, 300);
-        
-    }
-
-}
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    if (indexPath.item % 3 == 0) {
+//
+//        return CGSizeMake(self.view.bounds.size.width, 100);
+//    } else {
+//
+//        return CGSizeMake((self.view.bounds.size.width - 10)/2, 300);
+//
+//    }
+//
+//}
 
 
 /*

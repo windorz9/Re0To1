@@ -14,6 +14,8 @@
 		262F30B623161EAB00CB51BF /* ZXDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30B523161EAB00CB51BF /* ZXDeleteCellView.m */; };
 		262F30C223165B3300CB51BF /* ZXListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30C123165B3300CB51BF /* ZXListLoader.m */; };
 		262F30C923166DCA00CB51BF /* ZXListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30C823166DCA00CB51BF /* ZXListItem.m */; };
+		262F30CC2317B5EA00CB51BF /* ZXVideoCoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30CB2317B5EA00CB51BF /* ZXVideoCoverCell.m */; };
+		262F30CF2317FEBE00CB51BF /* ZXVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30CE2317FEBE00CB51BF /* ZXVideoPlayer.m */; };
 		2687912622AE979800D3A582 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2687912522AE979800D3A582 /* icon.bundle */; };
 		26F97EA922A6BAAC00946367 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F97EA822A6BAAC00946367 /* AppDelegate.m */; };
 		26F97EAC22A6BAAC00946367 /* ZXNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F97EAB22A6BAAC00946367 /* ZXNewsViewController.m */; };
@@ -38,6 +40,10 @@
 		262F30C123165B3300CB51BF /* ZXListLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXListLoader.m; sourceTree = "<group>"; };
 		262F30C723166DCA00CB51BF /* ZXListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXListItem.h; sourceTree = "<group>"; };
 		262F30C823166DCA00CB51BF /* ZXListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXListItem.m; sourceTree = "<group>"; };
+		262F30CA2317B5EA00CB51BF /* ZXVideoCoverCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXVideoCoverCell.h; sourceTree = "<group>"; };
+		262F30CB2317B5EA00CB51BF /* ZXVideoCoverCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXVideoCoverCell.m; sourceTree = "<group>"; };
+		262F30CD2317FEBE00CB51BF /* ZXVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXVideoPlayer.h; sourceTree = "<group>"; };
+		262F30CE2317FEBE00CB51BF /* ZXVideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXVideoPlayer.m; sourceTree = "<group>"; };
 		2687912522AE979800D3A582 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
 		26F97EA422A6BAAC00946367 /* Re0To1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Re0To1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F97EA722A6BAAC00946367 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +118,10 @@
 			children = (
 				262F30A82314D3ED00CB51BF /* ZXVideoViewController.h */,
 				262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */,
+				262F30CA2317B5EA00CB51BF /* ZXVideoCoverCell.h */,
+				262F30CB2317B5EA00CB51BF /* ZXVideoCoverCell.m */,
+				262F30CD2317FEBE00CB51BF /* ZXVideoPlayer.h */,
+				262F30CE2317FEBE00CB51BF /* ZXVideoPlayer.m */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -344,10 +354,12 @@
 				262F30B02315092200CB51BF /* ZXNormalTableViewCell.m in Sources */,
 				26F97EAC22A6BAAC00946367 /* ZXNewsViewController.m in Sources */,
 				262F30C923166DCA00CB51BF /* ZXListItem.m in Sources */,
+				262F30CC2317B5EA00CB51BF /* ZXVideoCoverCell.m in Sources */,
 				26F97EB722A6BAAD00946367 /* main.m in Sources */,
 				262F30AA2314D3ED00CB51BF /* ZXVideoViewController.m in Sources */,
 				262F30AD2314E50E00CB51BF /* ZXReCommendViewController.m in Sources */,
 				262F30B623161EAB00CB51BF /* ZXDeleteCellView.m in Sources */,
+				262F30CF2317FEBE00CB51BF /* ZXVideoPlayer.m in Sources */,
 				262F30C223165B3300CB51BF /* ZXListLoader.m in Sources */,
 				26F97EA922A6BAAC00946367 /* AppDelegate.m in Sources */,
 				262F30B32315260300CB51BF /* ZXDetailViewController.m in Sources */,
