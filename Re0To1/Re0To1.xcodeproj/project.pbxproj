@@ -11,6 +11,9 @@
 		2605468A2318CA080079F703 /* ZXScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 260546892318CA080079F703 /* ZXScreen.m */; };
 		2605468D23190B7D0079F703 /* ZXSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2605468C23190B7D0079F703 /* ZXSplashView.m */; };
 		262B02B1231A0BFA00A2384A /* ZXMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 262B02B0231A0BFA00A2384A /* ZXMediator.m */; };
+		262B02CF231A21B500A2384A /* libZXStaticFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 262B02CD231A21B500A2384A /* libZXStaticFramework.a */; };
+		262B02EC231A24DD00A2384A /* ZXFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262B02EA231A24B500A2384A /* ZXFramework.framework */; };
+		262B02ED231A24DD00A2384A /* ZXFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 262B02EA231A24B500A2384A /* ZXFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		262F30AA2314D3ED00CB51BF /* ZXVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */; };
 		262F30AD2314E50E00CB51BF /* ZXReCommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AC2314E50E00CB51BF /* ZXReCommendViewController.m */; };
 		262F30B02315092200CB51BF /* ZXNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AF2315092200CB51BF /* ZXNormalTableViewCell.m */; };
@@ -28,6 +31,20 @@
 		92BFAFF5FDC5DB819C9EFE94 /* Pods_Re0To1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C0D6C1D30EA8143DE4D040 /* Pods_Re0To1.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		262B02EE231A24DE00A2384A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				262B02ED231A24DD00A2384A /* ZXFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		260546852318BB080079F703 /* ZXVideoPlayerToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXVideoPlayerToolBar.h; sourceTree = "<group>"; };
 		260546862318BB080079F703 /* ZXVideoPlayerToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXVideoPlayerToolBar.m; sourceTree = "<group>"; };
@@ -37,6 +54,10 @@
 		2605468C23190B7D0079F703 /* ZXSplashView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXSplashView.m; sourceTree = "<group>"; };
 		262B02AF231A0BFA00A2384A /* ZXMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXMediator.h; sourceTree = "<group>"; };
 		262B02B0231A0BFA00A2384A /* ZXMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXMediator.m; sourceTree = "<group>"; };
+		262B02CC231A21B500A2384A /* ZXStaticFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXStaticFramework.h; sourceTree = "<group>"; };
+		262B02CD231A21B500A2384A /* libZXStaticFramework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libZXStaticFramework.a; sourceTree = "<group>"; };
+		262B02CE231A21B500A2384A /* ZXStaticFrameworkTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXStaticFrameworkTest.h; sourceTree = "<group>"; };
+		262B02EA231A24B500A2384A /* ZXFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZXFramework.framework; sourceTree = "<group>"; };
 		262F30A82314D3ED00CB51BF /* ZXVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXVideoViewController.h; sourceTree = "<group>"; };
 		262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXVideoViewController.m; sourceTree = "<group>"; };
 		262F30AB2314E50E00CB51BF /* ZXReCommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXReCommendViewController.h; sourceTree = "<group>"; };
@@ -74,6 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262B02CF231A21B500A2384A /* libZXStaticFramework.a in Frameworks */,
+				262B02EC231A24DD00A2384A /* ZXFramework.framework in Frameworks */,
 				92BFAFF5FDC5DB819C9EFE94 /* Pods_Re0To1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +104,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		262B02B2231A20BE00A2384A /* StaticFramework */ = {
+			isa = PBXGroup;
+			children = (
+				262B02CD231A21B500A2384A /* libZXStaticFramework.a */,
+				262B02CC231A21B500A2384A /* ZXStaticFramework.h */,
+				262B02CE231A21B500A2384A /* ZXStaticFrameworkTest.h */,
+			);
+			path = StaticFramework;
+			sourceTree = "<group>";
+		};
+		262B02E9231A248800A2384A /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				262B02EA231A24B500A2384A /* ZXFramework.framework */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
 		262F30B723162E0100CB51BF /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +134,8 @@
 				262F30B823162E0900CB51BF /* Modules */,
 				262F30BE23165AF800CB51BF /* Helps */,
 				262F30B923162E1E00CB51BF /* Resource */,
+				262B02B2231A20BE00A2384A /* StaticFramework */,
+				262B02E9231A248800A2384A /* Framework */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -265,6 +308,7 @@
 				26F97EA122A6BAAC00946367 /* Frameworks */,
 				26F97EA222A6BAAC00946367 /* Resources */,
 				73FCE69043E7E61E651F1694 /* [CP] Embed Pods Frameworks */,
+				262B02EE231A24DE00A2384A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -510,10 +554,18 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26Z2MG3ME2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Re0To1/Class/Framework",
+				);
 				INFOPLIST_FILE = Re0To1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Re0To1/Class/StaticFramework",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.windorz.Re0To1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -531,10 +583,18 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26Z2MG3ME2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Re0To1/Class/Framework",
+				);
 				INFOPLIST_FILE = Re0To1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Re0To1/Class/StaticFramework",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.windorz.Re0To1;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -11,6 +11,9 @@
 #import "ZXVideoViewController.h"
 #import "ZXReCommendViewController.h"
 #import "ZXSplashView.h"
+#import "ZXStaticFrameworkTest.h"
+#import <ZXFramework/ZXFramework.h>
+#import <ZXFramework/ZXFrameworkTest.h>
 
 @interface AppDelegate ()
 
@@ -52,7 +55,14 @@
     ZXSplashView *splashView = [[ZXSplashView alloc] initWithFrame:self.window.bounds];
     [self.window addSubview:splashView];
     
-
+    // 测试静态库
+//    [[ZXStaticFrameworkTest alloc] init];
+    
+    // 测试动态库
+    // Framework 并不一定就是动态库, framework 只是资源的一种打包方式,
+    // 真正决定是否是动态库取决于 buildSetting 里面的 Mach-O Type 的设置.
+//    [[ZXStaticFrameworkTest alloc] init];
+    
 
     return YES;
 }
