@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZXMediator.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZXDetailViewController : UIViewController
+
+/**
+ 文章底层页
+ */
+@interface ZXDetailViewController : UIViewController <ZXDetailViewControllerProtocol>
 
 - (instancetype)initWithUrlString:(NSString *)urlString;
 

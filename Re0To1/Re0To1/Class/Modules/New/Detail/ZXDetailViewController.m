@@ -9,6 +9,7 @@
 #import "ZXDetailViewController.h"
 #import <WebKit/WebKit.h>
 #import "ZXScreen.h"
+#import "ZXMediator.h"
 
 @interface ZXDetailViewController () <WKNavigationDelegate>
 /** WebView */
@@ -30,6 +31,25 @@
     }
     return self;
     
+    
+}
+
+// 注册 Scheme
++ (void)load {
+    
+    /**
+    // URL Scheme
+    // 注册 scheme 并通过 mediatorcache 持有 block 在需要的时候取出 block 调用
+    [ZXMediator registerSchemeUrl:@"detail://" processBlock:^(NSDictionary *params) {
+        NSString *urlSrting = (NSString *)[params objectForKey:@"url"];
+        UINavigationController *navigationController = (UINavigationController *)[params objectForKey:@"navigation"];
+        ZXDetailViewController *detailVC = [[ZXDetailViewController alloc] initWithUrlString:urlSrting];
+        [navigationController pushViewController:detailVC animated:YES];
+    }];
+     */
+    
+    // Protocol Class
+    [ZXMediator registerProtocol:@protocol(ZXDetailViewControllerProtocol) class:[self class]];
     
 }
 
@@ -81,6 +101,13 @@
 - (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change context:(nullable void *)context {
     
     self.progressView.progress = [change[NSKeyValueChangeNewKey] floatValue];
+    
+}
+
+#pragma mark ZXDetailViewControllerProtocol
+- (__kindof UIViewController *)detailViewControllerWithUrl:(NSString *)detailUrl {
+    
+    return [[[self class] alloc] initWithUrlString:detailUrl];
     
 }
 

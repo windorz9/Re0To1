@@ -8,7 +8,8 @@
 
 #import "ZXNewsViewController.h"
 #import "ZXNormalTableViewCell.h"
-#import "ZXDetailViewController.h"
+//#import "ZXDetailViewController.h"
+#import "ZXMediator.h"
 #import "ZXDeleteCellView.h"
 #import "ZXListLoader.h"
 #import "ZXListItem.h"
@@ -88,8 +89,23 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ZXListItem *item = self.dataArray[indexPath.row];
-    ZXDetailViewController *vc = [[ZXDetailViewController alloc] initWithUrlString:item.ariticleUrl];
-    [self.navigationController pushViewController:vc animated:YES];
+    
+    // 0. 普通跳转
+    //    ZXDetailViewController *vc = [[ZXDetailViewController alloc] initWithUrlString:item.ariticleUrl];
+    
+    // 1. TargetAction 跳转
+//    __kindof UIViewController *vc = [ZXMediator detailViewControllerWithUrl:item.ariticleUrl];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    // 2. URLScheme 跳转
+//    [ZXMediator openUrl:@"detail://" params:@{
+//                                              @"url" : item.ariticleUrl,
+//                                              @"navigation" : self.navigationController
+//                                              }];
+    
+    // 3. Protocol Class 进行跳转
+    Class cls = [ZXMediator classForProtocol:@protocol(ZXDetailViewControllerProtocol)];
+    [self.navigationController pushViewController:[[cls alloc] detailViewControllerWithUrl:item.ariticleUrl] animated:YES];
     
     // 添加处理已读状态
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniquekey];

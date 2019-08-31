@@ -10,6 +10,7 @@
 		260546872318BB080079F703 /* ZXVideoPlayerToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 260546862318BB080079F703 /* ZXVideoPlayerToolBar.m */; };
 		2605468A2318CA080079F703 /* ZXScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 260546892318CA080079F703 /* ZXScreen.m */; };
 		2605468D23190B7D0079F703 /* ZXSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2605468C23190B7D0079F703 /* ZXSplashView.m */; };
+		262B02B1231A0BFA00A2384A /* ZXMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 262B02B0231A0BFA00A2384A /* ZXMediator.m */; };
 		262F30AA2314D3ED00CB51BF /* ZXVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */; };
 		262F30AD2314E50E00CB51BF /* ZXReCommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AC2314E50E00CB51BF /* ZXReCommendViewController.m */; };
 		262F30B02315092200CB51BF /* ZXNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AF2315092200CB51BF /* ZXNormalTableViewCell.m */; };
@@ -34,6 +35,8 @@
 		260546892318CA080079F703 /* ZXScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXScreen.m; sourceTree = "<group>"; };
 		2605468B23190B7D0079F703 /* ZXSplashView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXSplashView.h; sourceTree = "<group>"; };
 		2605468C23190B7D0079F703 /* ZXSplashView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXSplashView.m; sourceTree = "<group>"; };
+		262B02AF231A0BFA00A2384A /* ZXMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXMediator.h; sourceTree = "<group>"; };
+		262B02B0231A0BFA00A2384A /* ZXMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXMediator.m; sourceTree = "<group>"; };
 		262F30A82314D3ED00CB51BF /* ZXVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXVideoViewController.h; sourceTree = "<group>"; };
 		262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXVideoViewController.m; sourceTree = "<group>"; };
 		262F30AB2314E50E00CB51BF /* ZXReCommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXReCommendViewController.h; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				26F97EA822A6BAAC00946367 /* AppDelegate.m */,
 				2605468B23190B7D0079F703 /* ZXSplashView.h */,
 				2605468C23190B7D0079F703 /* ZXSplashView.m */,
+				262B02AF231A0BFA00A2384A /* ZXMediator.h */,
+				262B02B0231A0BFA00A2384A /* ZXMediator.m */,
 				262F30B823162E0900CB51BF /* Modules */,
 				262F30BE23165AF800CB51BF /* Helps */,
 				262F30B923162E1E00CB51BF /* Resource */,
@@ -371,6 +376,7 @@
 				262F30AA2314D3ED00CB51BF /* ZXVideoViewController.m in Sources */,
 				262F30AD2314E50E00CB51BF /* ZXReCommendViewController.m in Sources */,
 				262F30B623161EAB00CB51BF /* ZXDeleteCellView.m in Sources */,
+				262B02B1231A0BFA00A2384A /* ZXMediator.m in Sources */,
 				262F30CF2317FEBE00CB51BF /* ZXVideoPlayer.m in Sources */,
 				262F30C223165B3300CB51BF /* ZXListLoader.m in Sources */,
 				260546872318BB080079F703 /* ZXVideoPlayerToolBar.m in Sources */,
