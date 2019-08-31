@@ -70,8 +70,19 @@
 
 - (void)handleTapGesture {
     
-    
     NSLog(@"Tap");
+    // 向 Scheme 白名单添加应用 , 并通过 URL 调启.
+    NSURL *schemeUrl = [NSURL URLWithString:@"weixin://"];
+    // 只能识别 info.plist 白名单里面的应用 LSApplicationQueriesSchemes
+//    NSDictionary *options = @{
+//                              UIApplicationOpenURLOptionsOpenInPlaceKey : @(0),
+//                              UIApplicationOpenURLOptionsSourceApplicationKey : @"com.windorz.Re0To1"
+//                              };
+    __unused BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:schemeUrl];
+    [[UIApplication sharedApplication] openURL:schemeUrl options:@{}
+                             completionHandler:^(BOOL success) {
+                                 NSLog(@"完成调启应用");
+                             }];
     
 }
 

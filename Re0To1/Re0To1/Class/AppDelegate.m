@@ -10,6 +10,7 @@
 #import "ZXNewsViewController.h"
 #import "ZXVideoViewController.h"
 #import "ZXReCommendViewController.h"
+#import "ZXSplashView.h"
 
 @interface AppDelegate ()
 
@@ -47,6 +48,10 @@
 //    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    // 添加一个自定义的闪屏 view 添加到上面去
+    ZXSplashView *splashView = [[ZXSplashView alloc] initWithFrame:self.window.bounds];
+    [self.window addSubview:splashView];
+    
 
 
     return YES;
@@ -79,5 +84,17 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+// 被外界 app 通过 Scheme 调用
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
+    /**
+     {
+     UIApplicationOpenURLOptionsOpenInPlaceKey = 0;
+     UIApplicationOpenURLOptionsSourceApplicationKey = "com.apple.mobilesafari";
+     }
+     */
+    NSLog(@"被其他 app 调启 %@", options);
+    return YES;
+}
 
 @end
