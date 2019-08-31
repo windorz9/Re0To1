@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		260546872318BB080079F703 /* ZXVideoPlayerToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 260546862318BB080079F703 /* ZXVideoPlayerToolBar.m */; };
 		2605468A2318CA080079F703 /* ZXScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 260546892318CA080079F703 /* ZXScreen.m */; };
+		2605468D23190B7D0079F703 /* ZXSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2605468C23190B7D0079F703 /* ZXSplashView.m */; };
 		262F30AA2314D3ED00CB51BF /* ZXVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */; };
 		262F30AD2314E50E00CB51BF /* ZXReCommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AC2314E50E00CB51BF /* ZXReCommendViewController.m */; };
 		262F30B02315092200CB51BF /* ZXNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AF2315092200CB51BF /* ZXNormalTableViewCell.m */; };
@@ -22,7 +23,6 @@
 		26F97EA922A6BAAC00946367 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F97EA822A6BAAC00946367 /* AppDelegate.m */; };
 		26F97EAC22A6BAAC00946367 /* ZXNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F97EAB22A6BAAC00946367 /* ZXNewsViewController.m */; };
 		26F97EB122A6BAAD00946367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26F97EB022A6BAAD00946367 /* Assets.xcassets */; };
-		26F97EB422A6BAAD00946367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F97EB222A6BAAD00946367 /* LaunchScreen.storyboard */; };
 		26F97EB722A6BAAD00946367 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F97EB622A6BAAD00946367 /* main.m */; };
 		92BFAFF5FDC5DB819C9EFE94 /* Pods_Re0To1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C0D6C1D30EA8143DE4D040 /* Pods_Re0To1.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +32,8 @@
 		260546862318BB080079F703 /* ZXVideoPlayerToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXVideoPlayerToolBar.m; sourceTree = "<group>"; };
 		260546882318CA080079F703 /* ZXScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXScreen.h; sourceTree = "<group>"; };
 		260546892318CA080079F703 /* ZXScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXScreen.m; sourceTree = "<group>"; };
+		2605468B23190B7D0079F703 /* ZXSplashView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXSplashView.h; sourceTree = "<group>"; };
+		2605468C23190B7D0079F703 /* ZXSplashView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXSplashView.m; sourceTree = "<group>"; };
 		262F30A82314D3ED00CB51BF /* ZXVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXVideoViewController.h; sourceTree = "<group>"; };
 		262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXVideoViewController.m; sourceTree = "<group>"; };
 		262F30AB2314E50E00CB51BF /* ZXReCommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXReCommendViewController.h; sourceTree = "<group>"; };
@@ -57,7 +59,6 @@
 		26F97EAA22A6BAAC00946367 /* ZXNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXNewsViewController.h; sourceTree = "<group>"; };
 		26F97EAB22A6BAAC00946367 /* ZXNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXNewsViewController.m; sourceTree = "<group>"; };
 		26F97EB022A6BAAD00946367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		26F97EB322A6BAAD00946367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26F97EB522A6BAAD00946367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26F97EB622A6BAAD00946367 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D6C0D6C1D30EA8143DE4D040 /* Pods_Re0To1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Re0To1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +83,8 @@
 			children = (
 				26F97EA722A6BAAC00946367 /* AppDelegate.h */,
 				26F97EA822A6BAAC00946367 /* AppDelegate.m */,
+				2605468B23190B7D0079F703 /* ZXSplashView.h */,
+				2605468C23190B7D0079F703 /* ZXSplashView.m */,
 				262F30B823162E0900CB51BF /* Modules */,
 				262F30BE23165AF800CB51BF /* Helps */,
 				262F30B923162E1E00CB51BF /* Resource */,
@@ -222,7 +225,6 @@
 			children = (
 				262F30B723162E0100CB51BF /* Class */,
 				26F97EB022A6BAAD00946367 /* Assets.xcassets */,
-				26F97EB222A6BAAD00946367 /* LaunchScreen.storyboard */,
 				26F97EB522A6BAAD00946367 /* Info.plist */,
 				26F97EB622A6BAAD00946367 /* main.m */,
 			);
@@ -307,7 +309,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2687912622AE979800D3A582 /* icon.bundle in Resources */,
-				26F97EB422A6BAAD00946367 /* LaunchScreen.storyboard in Resources */,
 				26F97EB122A6BAAD00946367 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,23 +374,13 @@
 				262F30CF2317FEBE00CB51BF /* ZXVideoPlayer.m in Sources */,
 				262F30C223165B3300CB51BF /* ZXListLoader.m in Sources */,
 				260546872318BB080079F703 /* ZXVideoPlayerToolBar.m in Sources */,
+				2605468D23190B7D0079F703 /* ZXSplashView.m in Sources */,
 				26F97EA922A6BAAC00946367 /* AppDelegate.m in Sources */,
 				262F30B32315260300CB51BF /* ZXDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		26F97EB222A6BAAD00946367 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				26F97EB322A6BAAD00946367 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		26F97EB822A6BAAD00946367 /* Debug */ = {
@@ -509,6 +500,7 @@
 			baseConfigurationReference = DEB85944EC63A33355778048 /* Pods-Re0To1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26Z2MG3ME2;
@@ -529,6 +521,7 @@
 			baseConfigurationReference = FCCD7766F220DBDFA2057503 /* Pods-Re0To1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26Z2MG3ME2;
