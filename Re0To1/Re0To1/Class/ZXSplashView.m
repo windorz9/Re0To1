@@ -25,6 +25,10 @@
         [skipBtn setTitle:@"跳 过" forState:UIControlStateNormal];
         [skipBtn addTarget:self action:@selector(_clickSkipBtn) forControlEvents:UIControlEventTouchUpInside];
         
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self _clickSkipBtn];
+        });
+        
     }
     return self;
     

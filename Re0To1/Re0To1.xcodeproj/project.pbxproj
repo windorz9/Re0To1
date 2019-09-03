@@ -14,6 +14,10 @@
 		262B02CF231A21B500A2384A /* libZXStaticFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 262B02CD231A21B500A2384A /* libZXStaticFramework.a */; };
 		262B02EC231A24DD00A2384A /* ZXFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262B02EA231A24B500A2384A /* ZXFramework.framework */; };
 		262B02ED231A24DD00A2384A /* ZXFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 262B02EA231A24B500A2384A /* ZXFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		262B02F1231E0E8100A2384A /* ZXMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262B02F0231E0E8100A2384A /* ZXMineViewController.m */; };
+		262B02F3231E154A00A2384A /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262B02F2231E154A00A2384A /* TencentOpenAPI.framework */; };
+		262B02F5231E155900A2384A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262B02F4231E155900A2384A /* SystemConfiguration.framework */; };
+		262B02F8231E3ADC00A2384A /* ZXLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 262B02F7231E3ADC00A2384A /* ZXLogin.m */; };
 		262F30AA2314D3ED00CB51BF /* ZXVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */; };
 		262F30AD2314E50E00CB51BF /* ZXReCommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AC2314E50E00CB51BF /* ZXReCommendViewController.m */; };
 		262F30B02315092200CB51BF /* ZXNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AF2315092200CB51BF /* ZXNormalTableViewCell.m */; };
@@ -58,6 +62,12 @@
 		262B02CD231A21B500A2384A /* libZXStaticFramework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libZXStaticFramework.a; sourceTree = "<group>"; };
 		262B02CE231A21B500A2384A /* ZXStaticFrameworkTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXStaticFrameworkTest.h; sourceTree = "<group>"; };
 		262B02EA231A24B500A2384A /* ZXFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZXFramework.framework; sourceTree = "<group>"; };
+		262B02EF231E0E8100A2384A /* ZXMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXMineViewController.h; sourceTree = "<group>"; };
+		262B02F0231E0E8100A2384A /* ZXMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXMineViewController.m; sourceTree = "<group>"; };
+		262B02F2231E154A00A2384A /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		262B02F4231E155900A2384A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		262B02F6231E3ADC00A2384A /* ZXLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXLogin.h; sourceTree = "<group>"; };
+		262B02F7231E3ADC00A2384A /* ZXLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXLogin.m; sourceTree = "<group>"; };
 		262F30A82314D3ED00CB51BF /* ZXVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXVideoViewController.h; sourceTree = "<group>"; };
 		262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXVideoViewController.m; sourceTree = "<group>"; };
 		262F30AB2314E50E00CB51BF /* ZXReCommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXReCommendViewController.h; sourceTree = "<group>"; };
@@ -95,7 +105,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262B02F5231E155900A2384A /* SystemConfiguration.framework in Frameworks */,
 				262B02CF231A21B500A2384A /* libZXStaticFramework.a in Frameworks */,
+				262B02F3231E154A00A2384A /* TencentOpenAPI.framework in Frameworks */,
 				262B02EC231A24DD00A2384A /* ZXFramework.framework in Frameworks */,
 				92BFAFF5FDC5DB819C9EFE94 /* Pods_Re0To1.framework in Frameworks */,
 			);
@@ -117,6 +129,7 @@
 		262B02E9231A248800A2384A /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				262B02F2231E154A00A2384A /* TencentOpenAPI.framework */,
 				262B02EA231A24B500A2384A /* ZXFramework.framework */,
 			);
 			path = Framework;
@@ -197,6 +210,10 @@
 		262F30BD23162E6100CB51BF /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				262B02EF231E0E8100A2384A /* ZXMineViewController.h */,
+				262B02F0231E0E8100A2384A /* ZXMineViewController.m */,
+				262B02F6231E3ADC00A2384A /* ZXLogin.h */,
+				262B02F7231E3ADC00A2384A /* ZXLogin.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -291,6 +308,7 @@
 		F8E2981E3DB4121C1B25634A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				262B02F4231E155900A2384A /* SystemConfiguration.framework */,
 				D6C0D6C1D30EA8143DE4D040 /* Pods_Re0To1.framework */,
 			);
 			name = Frameworks;
@@ -414,8 +432,10 @@
 				262F30B02315092200CB51BF /* ZXNormalTableViewCell.m in Sources */,
 				2605468A2318CA080079F703 /* ZXScreen.m in Sources */,
 				26F97EAC22A6BAAC00946367 /* ZXNewsViewController.m in Sources */,
+				262B02F8231E3ADC00A2384A /* ZXLogin.m in Sources */,
 				262F30C923166DCA00CB51BF /* ZXListItem.m in Sources */,
 				262F30CC2317B5EA00CB51BF /* ZXVideoCoverCell.m in Sources */,
+				262B02F1231E0E8100A2384A /* ZXMineViewController.m in Sources */,
 				26F97EB722A6BAAD00946367 /* main.m in Sources */,
 				262F30AA2314D3ED00CB51BF /* ZXVideoViewController.m in Sources */,
 				262F30AD2314E50E00CB51BF /* ZXReCommendViewController.m in Sources */,

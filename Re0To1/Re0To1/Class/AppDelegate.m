@@ -12,8 +12,10 @@
 #import "ZXReCommendViewController.h"
 #import "ZXSplashView.h"
 #import "ZXStaticFrameworkTest.h"
-#import <ZXFramework/ZXFramework.h>
-#import <ZXFramework/ZXFrameworkTest.h>
+//#import <ZXFramework/ZXFramework.h>
+//#import <ZXFramework/ZXFrameworkTest.h>
+#import "ZXMineViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -34,12 +36,7 @@
     
     ZXReCommendViewController *recommendController = [[ZXReCommendViewController alloc] init];
     
-    UIViewController *mineViewController = [[UIViewController alloc] init];
-    mineViewController.tabBarItem.title = @"我的";
-    mineViewController.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/home@2x.png"];
-    mineViewController.tabBarItem.selectedImage = [UIImage imageNamed:@"icon/home_selected@2x.png"];
-    mineViewController.view.backgroundColor = [UIColor orangeColor];
-
+    ZXMineViewController *mineViewController = [[ZXMineViewController alloc] init];
     tabBarController.viewControllers = @[newsViewController, videoController, recommendController, mineViewController];
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabBarController];

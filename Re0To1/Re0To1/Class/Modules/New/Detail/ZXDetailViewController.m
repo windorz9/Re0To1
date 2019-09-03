@@ -10,6 +10,7 @@
 #import <WebKit/WebKit.h>
 #import "ZXScreen.h"
 #import "ZXMediator.h"
+#import "ZXLogin.h"
 
 @interface ZXDetailViewController () <WKNavigationDelegate>
 /** WebView */
@@ -72,6 +73,9 @@
     UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, STATUSBARHEIGHT + 44, self.view.bounds.size.width, 2)];
     self.progressView = progressView;
     [self.view addSubview:progressView];
+    
+    // 添加一个导航栏分享按钮
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(_shareArticle)];
 }
 
 
@@ -109,6 +113,11 @@
     
     return [[[self class] alloc] initWithUrlString:detailUrl];
     
+}
+
+- (void)_shareArticle {
+    
+    [[ZXLogin sharedLogin] shareToQQZoneWithArticleUrl:[NSURL URLWithString:self.articleUrl]];
 }
 
 
