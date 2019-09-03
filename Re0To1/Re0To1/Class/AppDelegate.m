@@ -15,6 +15,7 @@
 //#import <ZXFramework/ZXFramework.h>
 //#import <ZXFramework/ZXFrameworkTest.h>
 #import "ZXMineViewController.h"
+#import <execinfo.h>
 
 
 @interface AppDelegate ()
@@ -51,6 +52,10 @@
     // 添加一个自定义的闪屏 view 添加到上面去
     ZXSplashView *splashView = [[ZXSplashView alloc] initWithFrame:self.window.bounds];
     [self.window addSubview:splashView];
+    
+    // 收集错误的信息
+//    [self _caughtException];
+//    [@[].mutableCopy addObject:nil];
     
     // 测试静态库
 //    [[ZXStaticFrameworkTest alloc] init];
@@ -102,6 +107,47 @@
      */
     NSLog(@"被其他 app 调启 %@", options);
     return YES;
+}
+
+#pragma mark Crash
+- (void)_caughtException {
+    
+    // 收集 NSException
+    NSSetUncaughtExceptionHandler(HandleNSException);
+    
+    // 收集信号量错误信息 signal
+    signal(SIGABRT, HandleSignalException);
+    signal(SIGILL, HandleSignalException);
+    signal(SIGSEGV, HandleSignalException);
+    signal(SIGFPE, HandleSignalException);
+    signal(SIGBUS, HandleSignalException);
+    signal(SIGPIPE, HandleSignalException);
+
+}
+
+void HandleSignalException(int signal) {
+    
+    void* callstack[128];
+    int frames = backtrace(callstack, 128);
+    char **strs = backtrace_symbols(callstack, frames);
+    NSMutableArray *backtrace = [NSMutableArray arrayWithCapacity:frames];
+    for (int i = 0; i < frames; i++) {
+        [backtrace addObject:[NSString stringWithUTF8String:strs[i]]];
+    }
+    free(strs);
+    // 存储 crash 信息
+    
+    
+    
+}
+
+void HandleNSException(NSException *exception) {
+    
+    __unused NSString *reason = [exception reason];
+    __unused NSString *name = [exception name];
+    // 存储 Crash 信息 可以进行上报
+    
+    
 }
 
 @end
