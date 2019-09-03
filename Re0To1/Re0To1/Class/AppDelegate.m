@@ -16,6 +16,7 @@
 //#import <ZXFramework/ZXFrameworkTest.h>
 #import "ZXMineViewController.h"
 #import <execinfo.h>
+#import "ZXLocation.h"
 
 
 @interface AppDelegate ()
@@ -64,6 +65,9 @@
     // Framework 并不一定就是动态库, framework 只是资源的一种打包方式,
     // 真正决定是否是动态库取决于 buildSetting 里面的 Mach-O Type 的设置.
 //    [[ZXStaticFrameworkTest alloc] init];
+    
+    // 监听位置信息
+    [[ZXLocation locationManager] checkLocationAuthorization];
     
 
     return YES;

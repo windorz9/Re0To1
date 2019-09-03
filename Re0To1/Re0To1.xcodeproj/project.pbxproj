@@ -18,6 +18,7 @@
 		262B02F3231E154A00A2384A /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262B02F2231E154A00A2384A /* TencentOpenAPI.framework */; };
 		262B02F5231E155900A2384A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262B02F4231E155900A2384A /* SystemConfiguration.framework */; };
 		262B02F8231E3ADC00A2384A /* ZXLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 262B02F7231E3ADC00A2384A /* ZXLogin.m */; };
+		262B02FC231E56A700A2384A /* ZXLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 262B02FB231E56A700A2384A /* ZXLocation.m */; };
 		262F30AA2314D3ED00CB51BF /* ZXVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */; };
 		262F30AD2314E50E00CB51BF /* ZXReCommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AC2314E50E00CB51BF /* ZXReCommendViewController.m */; };
 		262F30B02315092200CB51BF /* ZXNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AF2315092200CB51BF /* ZXNormalTableViewCell.m */; };
@@ -68,6 +69,8 @@
 		262B02F4231E155900A2384A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		262B02F6231E3ADC00A2384A /* ZXLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXLogin.h; sourceTree = "<group>"; };
 		262B02F7231E3ADC00A2384A /* ZXLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXLogin.m; sourceTree = "<group>"; };
+		262B02FA231E56A700A2384A /* ZXLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXLocation.h; sourceTree = "<group>"; };
+		262B02FB231E56A700A2384A /* ZXLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXLocation.m; sourceTree = "<group>"; };
 		262F30A82314D3ED00CB51BF /* ZXVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXVideoViewController.h; sourceTree = "<group>"; };
 		262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXVideoViewController.m; sourceTree = "<group>"; };
 		262F30AB2314E50E00CB51BF /* ZXReCommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXReCommendViewController.h; sourceTree = "<group>"; };
@@ -135,6 +138,17 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
+		262B02F9231E568200A2384A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				262B02AF231A0BFA00A2384A /* ZXMediator.h */,
+				262B02B0231A0BFA00A2384A /* ZXMediator.m */,
+				262B02FA231E56A700A2384A /* ZXLocation.h */,
+				262B02FB231E56A700A2384A /* ZXLocation.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		262F30B723162E0100CB51BF /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,13 +156,12 @@
 				26F97EA822A6BAAC00946367 /* AppDelegate.m */,
 				2605468B23190B7D0079F703 /* ZXSplashView.h */,
 				2605468C23190B7D0079F703 /* ZXSplashView.m */,
-				262B02AF231A0BFA00A2384A /* ZXMediator.h */,
-				262B02B0231A0BFA00A2384A /* ZXMediator.m */,
 				262F30B823162E0900CB51BF /* Modules */,
 				262F30BE23165AF800CB51BF /* Helps */,
 				262F30B923162E1E00CB51BF /* Resource */,
 				262B02B2231A20BE00A2384A /* StaticFramework */,
 				262B02E9231A248800A2384A /* Framework */,
+				262B02F9231E568200A2384A /* Utils */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -444,6 +457,7 @@
 				262F30CF2317FEBE00CB51BF /* ZXVideoPlayer.m in Sources */,
 				262F30C223165B3300CB51BF /* ZXListLoader.m in Sources */,
 				260546872318BB080079F703 /* ZXVideoPlayerToolBar.m in Sources */,
+				262B02FC231E56A700A2384A /* ZXLocation.m in Sources */,
 				2605468D23190B7D0079F703 /* ZXSplashView.m in Sources */,
 				26F97EA922A6BAAC00946367 /* AppDelegate.m in Sources */,
 				262F30B32315260300CB51BF /* ZXDetailViewController.m in Sources */,
