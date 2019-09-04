@@ -17,6 +17,7 @@
 #import "ZXMineViewController.h"
 #import <execinfo.h>
 #import "ZXLocation.h"
+#import "ZXNotification.h"
 
 
 @interface AppDelegate ()
@@ -68,6 +69,9 @@
     
     // 监听位置信息
     [[ZXLocation locationManager] checkLocationAuthorization];
+    
+    // 监听通知权限
+    [[ZXNotification notificationManager] checkNotificationAuthorization];
     
 
     return YES;
@@ -152,6 +156,24 @@ void HandleNSException(NSException *exception) {
     // 存储 Crash 信息 可以进行上报
     
     
+}
+
+#pragma mark 远程通知代理方法
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    // 注册成功返回当前设备的 deviceToken
+    // 业务逻辑收敛到 ZXNotification;
+    // 使用 开源的 Pusher 测试 需要真机和推送证书
+    NSLog(@"注册成功");
+    
+    
+    
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    // 注册失败
+    NSLog(@"注册失败  error : %@", error);
 }
 
 @end

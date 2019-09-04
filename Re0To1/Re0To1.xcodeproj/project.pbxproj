@@ -19,6 +19,7 @@
 		262B02F5231E155900A2384A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262B02F4231E155900A2384A /* SystemConfiguration.framework */; };
 		262B02F8231E3ADC00A2384A /* ZXLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 262B02F7231E3ADC00A2384A /* ZXLogin.m */; };
 		262B02FC231E56A700A2384A /* ZXLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 262B02FB231E56A700A2384A /* ZXLocation.m */; };
+		262B02FF231E791000A2384A /* ZXNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 262B02FE231E791000A2384A /* ZXNotification.m */; };
 		262F30AA2314D3ED00CB51BF /* ZXVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */; };
 		262F30AD2314E50E00CB51BF /* ZXReCommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AC2314E50E00CB51BF /* ZXReCommendViewController.m */; };
 		262F30B02315092200CB51BF /* ZXNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AF2315092200CB51BF /* ZXNormalTableViewCell.m */; };
@@ -71,6 +72,8 @@
 		262B02F7231E3ADC00A2384A /* ZXLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXLogin.m; sourceTree = "<group>"; };
 		262B02FA231E56A700A2384A /* ZXLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXLocation.h; sourceTree = "<group>"; };
 		262B02FB231E56A700A2384A /* ZXLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXLocation.m; sourceTree = "<group>"; };
+		262B02FD231E791000A2384A /* ZXNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXNotification.h; sourceTree = "<group>"; };
+		262B02FE231E791000A2384A /* ZXNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXNotification.m; sourceTree = "<group>"; };
 		262F30A82314D3ED00CB51BF /* ZXVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXVideoViewController.h; sourceTree = "<group>"; };
 		262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXVideoViewController.m; sourceTree = "<group>"; };
 		262F30AB2314E50E00CB51BF /* ZXReCommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXReCommendViewController.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				262B02B0231A0BFA00A2384A /* ZXMediator.m */,
 				262B02FA231E56A700A2384A /* ZXLocation.h */,
 				262B02FB231E56A700A2384A /* ZXLocation.m */,
+				262B02FD231E791000A2384A /* ZXNotification.h */,
+				262B02FE231E791000A2384A /* ZXNotification.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262B02FF231E791000A2384A /* ZXNotification.m in Sources */,
 				262F30B02315092200CB51BF /* ZXNormalTableViewCell.m in Sources */,
 				2605468A2318CA080079F703 /* ZXScreen.m in Sources */,
 				26F97EAC22A6BAAC00946367 /* ZXNewsViewController.m in Sources */,
