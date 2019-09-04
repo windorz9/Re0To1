@@ -20,6 +20,7 @@
 		262B02F8231E3ADC00A2384A /* ZXLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 262B02F7231E3ADC00A2384A /* ZXLogin.m */; };
 		262B02FC231E56A700A2384A /* ZXLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 262B02FB231E56A700A2384A /* ZXLocation.m */; };
 		262B02FF231E791000A2384A /* ZXNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 262B02FE231E791000A2384A /* ZXNotification.m */; };
+		262B0302231F74B200A2384A /* ICONBLACK.png in Resources */ = {isa = PBXBuildFile; fileRef = 262B0301231F74B200A2384A /* ICONBLACK.png */; };
 		262F30AA2314D3ED00CB51BF /* ZXVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */; };
 		262F30AD2314E50E00CB51BF /* ZXReCommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AC2314E50E00CB51BF /* ZXReCommendViewController.m */; };
 		262F30B02315092200CB51BF /* ZXNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F30AF2315092200CB51BF /* ZXNormalTableViewCell.m */; };
@@ -74,6 +75,7 @@
 		262B02FB231E56A700A2384A /* ZXLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXLocation.m; sourceTree = "<group>"; };
 		262B02FD231E791000A2384A /* ZXNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXNotification.h; sourceTree = "<group>"; };
 		262B02FE231E791000A2384A /* ZXNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXNotification.m; sourceTree = "<group>"; };
+		262B0301231F74B200A2384A /* ICONBLACK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICONBLACK.png; sourceTree = "<group>"; };
 		262F30A82314D3ED00CB51BF /* ZXVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXVideoViewController.h; sourceTree = "<group>"; };
 		262F30A92314D3ED00CB51BF /* ZXVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXVideoViewController.m; sourceTree = "<group>"; };
 		262F30AB2314E50E00CB51BF /* ZXReCommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXReCommendViewController.h; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		262B0300231F748F00A2384A /* AlternateIcons */ = {
+			isa = PBXGroup;
+			children = (
+				262B0301231F74B200A2384A /* ICONBLACK.png */,
+			);
+			path = AlternateIcons;
+			sourceTree = "<group>";
+		};
 		262F30B723162E0100CB51BF /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +177,7 @@
 				262B02B2231A20BE00A2384A /* StaticFramework */,
 				262B02E9231A248800A2384A /* Framework */,
 				262B02F9231E568200A2384A /* Utils */,
+				262B0300231F748F00A2384A /* AlternateIcons */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -395,6 +406,7 @@
 			files = (
 				2687912622AE979800D3A582 /* icon.bundle in Resources */,
 				26F97EB122A6BAAD00946367 /* Assets.xcassets in Resources */,
+				262B0302231F74B200A2384A /* ICONBLACK.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

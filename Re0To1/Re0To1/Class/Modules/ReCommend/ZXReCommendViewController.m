@@ -48,27 +48,27 @@
     }
     
     // 创建一个接受点击事件的视图
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
-    view.backgroundColor = [UIColor yellowColor];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture)];
-    tap.delegate = self;
-    [view addGestureRecognizer:tap];
-    
-    
-    [scrollView addSubview:view];
-    
-    
-    
+    UIButton *urlSchemeBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - 100)/2, 100, 100, 100)];
+    [urlSchemeBtn setTitle:@"唤起微信" forState:UIControlStateNormal];
+    [urlSchemeBtn setBackgroundColor:[UIColor orangeColor]];
+    [urlSchemeBtn addTarget:self action:@selector(clickUrlSchemeBtn) forControlEvents:UIControlEventTouchUpInside];
+    [scrollView addSubview:urlSchemeBtn];
     
     scrollView.pagingEnabled = YES;
     [self.view addSubview:scrollView];
+    
+    UIButton *changeIconBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - 100)/2, 300, 100, 100)];
+    [changeIconBtn setTitle:@"改变图标" forState:UIControlStateNormal];
+    [changeIconBtn setBackgroundColor:[UIColor orangeColor]];
+    [changeIconBtn addTarget:self action:@selector(clickChangeIconBtn) forControlEvents:UIControlEventTouchUpInside];
+    [scrollView addSubview:changeIconBtn];
     
     
     
     
 }
 
-- (void)handleTapGesture {
+- (void)clickUrlSchemeBtn {
     
     NSLog(@"Tap");
     // 向 Scheme 白名单添加应用 , 并通过 URL 调启.
@@ -83,6 +83,20 @@
                              completionHandler:^(BOOL success) {
                                  NSLog(@"完成调启应用");
                              }];
+    
+}
+
+// 改变应用的图标
+- (void)clickChangeIconBtn {
+    
+    // 0. 首先判断是否支持改变图标
+    if ([UIApplication sharedApplication].supportsAlternateIcons) {
+        // 设置 nil 可以恢复到默认设置的应用图标.
+        [[UIApplication sharedApplication] setAlternateIconName:@"ICONBLACK" completionHandler:^(NSError * _Nullable error) {
+            NSLog(@"完成回调");
+        }];
+        
+    }
     
 }
 
