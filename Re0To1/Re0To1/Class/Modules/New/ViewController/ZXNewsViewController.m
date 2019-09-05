@@ -81,11 +81,13 @@
     [self.tabBarController.navigationItem setTitleView:searchBar];
      */
     
+    /**
     UIButton *searchBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - UI(20), self.navigationController.navigationBar.bounds.size.height)];
     [searchBtn addTarget:self action:@selector(_clickSearchBtn) forControlEvents:UIControlEventTouchUpInside];
     [searchBtn setTitle:@"弹出全景文本框" forState:UIControlStateNormal];
     [searchBtn setBackgroundColor:[UIColor lightGrayColor]];
     [self.tabBarController.navigationItem setTitleView:searchBtn];
+     */
 
 }
 
