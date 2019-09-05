@@ -68,10 +68,14 @@
 //    [[ZXStaticFrameworkTest alloc] init];
     
     // 监听位置信息
-    [[ZXLocation locationManager] checkLocationAuthorization];
+//    [[ZXLocation locationManager] checkLocationAuthorization];
     
     // 监听通知权限
-    [[ZXNotification notificationManager] checkNotificationAuthorization];
+//    [[ZXNotification notificationManager] checkNotificationAuthorization];
+    
+    // 创建一个 同一个 APPGroup 中的 Today 和 主程序的 共享 UserDefaults
+    NSUserDefaults *userDafaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.windorz.Re0To1"];
+    [userDafaults setObject:@"皮皮虾我们走" forKey:@"title"];
     
 
     return YES;
