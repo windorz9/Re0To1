@@ -13,6 +13,9 @@
 #import "ZXDeleteCellView.h"
 #import "ZXListLoader.h"
 #import "ZXListItem.h"
+#import "ZXScreen.h"
+#import "ZXSearchBar.h"
+#import "ZXCommentManager.h"
 
 @interface ZXNewsViewController () <UITableViewDataSource, UITableViewDelegate, ZXNormalTableViewCellDelegate>
 /** TableView */
@@ -60,6 +63,30 @@
         [strongSelf.tableView reloadData];
     }];
     self.lisLoader = listLoader;
+    
+    // 添加一个导航栏分享按钮
+    // 为什么在这里获取不到导航栏
+    // 添加一个搜索栏
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+//    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+    /**
+    // 展示搜索框
+    ZXSearchBar *searchBar = [[ZXSearchBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - UI(20), self.navigationController.navigationBar.bounds.size.height)];
+    [self.tabBarController.navigationItem setTitleView:searchBar];
+     */
+    
+    UIButton *searchBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - UI(20), self.navigationController.navigationBar.bounds.size.height)];
+    [searchBtn addTarget:self action:@selector(_clickSearchBtn) forControlEvents:UIControlEventTouchUpInside];
+    [searchBtn setTitle:@"弹出全景文本框" forState:UIControlStateNormal];
+    [searchBtn setBackgroundColor:[UIColor lightGrayColor]];
+    [self.tabBarController.navigationItem setTitleView:searchBtn];
+
 }
 
 #pragma mark UITableViewDataSource & UITableViewDelegate
@@ -129,6 +156,14 @@
 //        [strongSelf.dataArray removeObjectAtIndex:indexPath.row];
 //        [strongSelf.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 //    }];
+    
+}
+
+
+#pragma mark Private Method
+- (void)_clickSearchBtn {
+    
+    [[ZXCommentManager sharedManager] showCommentView];
     
 }
 

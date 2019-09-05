@@ -18,6 +18,8 @@
     NSArray<ZXListItem *> *listData = [self _readDataFromLocal];
     if (listData) {
         finishBlock(YES, listData);
+        // api 超过请求数字极限 则直接 return
+        return;
     }
     
     NSString *urlString = @"http://v.juhe.cn/toutiao/index?type=top&key=97ad001bfcc2082e2eeaf798bad3d54e";
